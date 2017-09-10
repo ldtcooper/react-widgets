@@ -9,3 +9,5 @@ const NAMES = [
   "Sun Tzu",
   "Alistair Stewart"
 ];
+
+export default NAMES;

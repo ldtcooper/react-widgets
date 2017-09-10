@@ -49,11 +49,13 @@ table {
 Real
 */
 body {
-	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 div {
 	display: flex;
+	flex-direction: column;
 }
 
 #date-and-time {
@@ -94,4 +96,19 @@ div {
 	flex-direction: column;
 	align-self: flex-end;
 	padding: 10px;
+}
+
+#autocomplete {
+	width: 200px;
+
+}
+
+#autocomplete ul {
+	list-style: square;
+	display: flex;
+	flex-flow: wrap column;
+}
+
+#autocomplete ul li {
+	margin: 5px;
 }
