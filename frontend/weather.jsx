@@ -15,16 +15,17 @@ class Weather extends React.Component {
   render() {
     let content = <div></div>;
     if (this.state.weather) {
-      content = <div id="weather">
+      content = <div id="weather-data">
         <h1>The weather in {this.place()}: </h1>
-        <h2>{this.temp()} degrees</h2>
+        <br></br>
+        <h2>{this.temp()}°</h2>
         <h2>{this.clearness()}</h2>
       </div>;
     } else {
-      content = <div id="loading">Loading weather...</div>;
+      content = <div>Loading weather...</div>;
     }
     return (
-      <div>
+      <div id="weather-app">
         {content}
       </div>
     );
