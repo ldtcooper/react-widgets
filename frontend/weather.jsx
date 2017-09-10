@@ -13,11 +13,19 @@ class Weather extends React.Component {
   }
 
   render() {
-    return (
-      <div id="weather">
-        <h1>The weather in {this.place()}:</h1>
-        <h2>{this.temp()}()</h2>
+    let content = <div></div>;
+    if (this.state.weather) {
+      content = <div id="weather">
+        <h1>The weather in {this.place()}: </h1>
+        <h2>{this.temp()} degrees</h2>
         <h2>{this.clearness()}</h2>
+      </div>;
+    } else {
+      content = <div id="loading">Loading weather...</div>;
+    }
+    return (
+      <div>
+        {content}
       </div>
     );
   }
@@ -47,11 +55,11 @@ class Weather extends React.Component {
 
   temp() {
     let kTemp = this.state.weather.main.temp;
-    return (kTemp * (9/5) - 459.67);
+    return (kTemp * (9/5) - 459.67).toFixed(1);
   }
 
   clearness() {
-    let clear = this.state.weather[0].main;
+    let clear = this.state.weather.weather[0].main;
     return clear;
   }
 
