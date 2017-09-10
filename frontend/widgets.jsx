@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Clock from './clock';
 import Weather from './weather';
 import AutoComplete from './autocomplete';
-
+import Names from './names.js';
 
 class Root extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Root extends React.Component {
       <div>
         <Clock />
         <Weather />
-        <AutoComplete />
+        <AutoComplete names={Names}/>
       </div>
     );
   }
